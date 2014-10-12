@@ -42,5 +42,5 @@ inherits custom_bash_profile::params
 						 default: {
 						      fail ("Module ${module_name} is not supported on ${::osfamily}")
 			         }   
-     }
-}
+              }
+        }
