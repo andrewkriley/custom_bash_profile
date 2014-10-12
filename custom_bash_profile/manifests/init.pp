@@ -16,6 +16,8 @@ $profile_d_dir = $custom_bash_profile::params::profile_d_dir,
 )
 inherits custom_bash_profile::params
 {
+  
+# Copy customer_bash_profile.sh to   
 file { $profile_d_dir :
   ensure => directory,
 }
@@ -23,6 +25,6 @@ file { $profile_d_dir :
 file { "${profile_d_dir}/custom_bash_profile.sh" :
   ensure  => file,
   source => "puppet:///modules/custom_bash_profile/custom_bash_profile.sh",
-  #mode    => "0755",
+  mode    => "0755",
 }
 }
