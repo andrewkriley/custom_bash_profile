@@ -1,0 +1,13 @@
+{
+  "author": "",
+  "dependencies": [],
+  "license": "",
+  "name": "andreril-custom_bash_profile",
+  "operatingsystem_support": [],
+  "project_page": "",
+  "requirements": [],
+  "source": "",
+  "summary": "Add's bash customisation scripts to /etc/profile.d",
+  "tags": [],
+  "version": "0.1.0"
+}
