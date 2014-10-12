@@ -8,4 +8,4 @@ PS1='\[\e[0;31m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[0;31m\]\$ \[\e[m\]\[\e[0
 #alias ar-diskspace="du -S | sort -n -r |more"
 
 #Dynamic MOTD
-#/usr/local/bin/dynmotd
+/usr/local/bin/dynmotd

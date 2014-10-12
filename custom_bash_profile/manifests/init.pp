@@ -21,6 +21,11 @@ inherits custom_bash_profile::params
 			
 			    "Redhat" , "Debian" : {
 			      notify {'You are using a supported OS Family': }
+			
+			file { "/usr/local/bin/dynmotd" :
+			  ensure => file,
+			  source => "puppet:///modules/custom_bash_profile/dynmotd"			  
+			  }
 			  
 			file { $profile_d_dir :
 			  ensure => directory,
