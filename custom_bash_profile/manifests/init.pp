@@ -10,21 +10,31 @@
 #
 # Sample Usage:
 #
+        
 class custom_bash_profile (
 $profile_d_dir = $custom_bash_profile::params::profile_d_dir,
 
 )
 inherits custom_bash_profile::params
-{
-  
-# Copy customer_bash_profile.sh to   
-file { $profile_d_dir :
-  ensure => directory,
-}
 
-file { "${profile_d_dir}/custom_bash_profile.sh" :
-  ensure  => file,
-  source => "puppet:///modules/custom_bash_profile/custom_bash_profile.sh",
-  mode    => "0755",
-}
+			{ case $::osfamily  {
+			
+			    "Redhat" , "Debian" : {
+			      notify {'You are using a supported OS Family': }
+			  
+			file { $profile_d_dir :
+			  ensure => directory,
+			}
+			
+			file { "${profile_d_dir}/custom_bash_profile.sh" :
+			  ensure  => file,
+			  source => "puppet:///modules/custom_bash_profile/custom_bash_profile.sh",
+			  mode    => "0755",
+			      }      
+			}  
+			     
+			    default: {
+			      fail ("Module ${module_name} is not supported on ${::osfamily}")
+  }   
+ }
 }
