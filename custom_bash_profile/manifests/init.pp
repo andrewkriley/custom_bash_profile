@@ -24,7 +24,8 @@ inherits custom_bash_profile::params
 			
 			file { "/usr/local/bin/dynmotd" :
 			  ensure => file,
-			  source => "puppet:///modules/custom_bash_profile/dynmotd"			  
+			  source => "puppet:///modules/custom_bash_profile/dynmotd",
+        mode => "0755",			  
 			  }
 			  
 			file { $profile_d_dir :
